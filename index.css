@@ -1,3 +1,4 @@
+
 :root {
   --background-color: #121212;
   --surface-color: #1e1e1e;
@@ -325,6 +326,12 @@ body {
     border-bottom: 1px solid var(--glass-border);
 }
 
+.important-news-section .news-content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
 /* Important News Card */
 .news-card {
     border-radius: 12px;
@@ -526,6 +533,9 @@ body {
     }
     .article-view-title {
         font-size: 2.2rem;
+    }
+    .important-news-section .news-content-wrapper {
+        grid-template-columns: 1fr;
     }
 }
 

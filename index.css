@@ -256,7 +256,7 @@ body {
     position: fixed;
     top: calc(1rem + 70px); /* Positioned below the header */
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(0);
     width: calc(100% - 2rem);
     max-width: 1200px;
     background-color: var(--yellow-accent);
@@ -266,6 +266,13 @@ body {
     white-space: nowrap;
     z-index: 999;
     border-radius: 8px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease-out;
+}
+
+.ticker-bar.retracted {
+    transform: translateX(-50%) translateY(-100px);
+    opacity: 0;
+    pointer-events: none;
 }
 
 .ticker-bar.emergency {
@@ -311,6 +318,11 @@ body {
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
+    transition: padding-top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.main-content.ticker-hidden {
+    padding-top: 90px;
 }
 
 .content-column {
